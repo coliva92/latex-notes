@@ -1,0 +1,135 @@
+\documentclass[a4paper,leqno,nobib,sfsidenotes]{tufte-book}
+
+
+%% Paquetes relacionados con el lenguaje y la localización del texto
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-tabla]{babel}
+\usepackage{csquotes}   %% Comillas dobles
+\decimalpoint           %% Usar punto decimal en lugar de una coma
+\usepackage[
+  backend=biber,
+  autocite=footnote,    %% Inserta las ref. en el margen con \autocite
+  style=authoryear,     %% Orden en que aparece la info. en la bibliografía
+  uniquename=init,      %% Usa iniciales para distinguir apellidos repetidos
+  maxcitenames=1,       %% Se cita solo el primer autor
+  mincitenames=1,
+  doi=false,            %% Ignora estos campos del archivo .bib
+  isbn=false,
+  url=false,
+  eprint=false,
+  dashed=false
+]{biblatex}
+
+
+%% Paquetes relacionados con tablas, figuras y otras gráficas
+\usepackage{float}      %% Para gráficos flotantes en la página
+\usepackage{booktabs}   %% Para tablas más sofisticadas
+\usepackage{multirow}   %% Para columnas y renglones extendidos en tablas
+\usepackage{graphicx}   %% Para gráficos generales
+
+
+%% Paquetes relacionados con el formato de ciertas secciones del texto
+\usepackage{caption}    %% Para el texto debajo de gráficos flotantes
+\usepackage{multicol}   %% Para secciones con texto dividido en columnas
+\usepackage{enumitem}   %% Para listas con viñetas
+\setlist[itemize]{label=\textbullet}
+
+
+%% Paquetes relacionados con los ambientes matemáticos
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+
+%% Definición de los ambientes matemáticos
+\providecommand{\casename}{Caso}
+\providecommand{\definitionname}{Definición}
+\providecommand{\examplename}{Ejemplo}
+\providecommand{\propositionname}{Proposición}
+\providecommand{\theoremname}{Teorema}
+\providecommand{\lemmaname}{Lema}
+\providecommand{\corollaryname}{Corolario}
+\providecommand{\remarkname}{Observación}
+\theoremstyle{definition}
+\newtheorem{defn}{\protect\definitionname}
+\newtheorem{expl}{\protect\examplename}
+\theoremstyle{plain}
+\newtheorem{prop}{\protect\propositionname}
+\newtheorem{thm}{\protect\theoremname}
+\newtheorem{lem}{\protect\lemmaname}
+\newtheorem{cor}{\protect\corollaryname}
+\theoremstyle{remark}
+\newtheorem{rem}{\protect\remarkname}
+
+%% Configuración del enumerado de los ambientes matemáticos
+\newlist{casenv}{enumerate}{4}
+\setlist[casenv]{leftmargin=*,align=left,widest={iiii}}
+\setlist[casenv,1]{label={{\itshape\ \casename} \arabic*.},ref=\arabic*}
+\setlist[casenv,2]{label={{\itshape\ \casename} \roman*.},ref=\roman*}
+\setlist[casenv,3]{label={{\itshape\ \casename\ \alph*.}},ref=\alph*}
+\setlist[casenv,4]{label={{\itshape\ \casename} \arabic*.},ref=\arabic*}
+
+%% Símbolo para indicar el final de un ejemplo
+\newcommand\xqed[1]{\leavevmode\unskip\penalty9999 \hbox{}\nobreak\hfill\quad\hbox{#1}}
+\newcommand\exend{\xqed{$\blacklozenge}}
+
+
+%% Configuración para colocar automáticamente hipervínculos en el PDF
+\PassOptionsToPackage{
+  unicode=true,
+  pdfusetitle,
+  bookmarks=true,
+  bookmarksnumbered=true,
+  bookmarksopen=false,
+  breaklinks=false,
+  pdfborder={0 0 1},
+  backref=false,
+  colorlinks=false
+}{hyperref}
+
+
+%% Configuración para escribir pseudocódigo
+% \usepackage[vlined,linesnumbered,ruled]{algorithm2e}
+% \setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+
+% \SetKw{Error}{error}
+% \SetKw{And}{and}
+% \SetKw{Or}{or}
+% \SetKw{Not}{not}
+% \SetKw{True}{true}
+% \SetKw{False}{false}
+% \SetKw{Nil}{nil}
+% \SetKw{Down}{down to}
+% \SetCommentSty{textit}
+% \SetKwComment{Comment}{$\triangleright$ }{}
+% \SetFuncSty{textsc}
+% \DontPrintSemicolon
+
+
+%% Se eliminan algunos campos innecesarios de las ref. bibliográficas
+\makeatletter
+\AtBeginDocument{
+  \AtEveryBibitem{\clearfield{month}}
+  \AtEveryBibitem{\clearfield{day}}
+  \AtEveryBibitem{\clearfield{note}}
+  \AtEveryBibitem{\clearlist{location}}
+  \AtEveryBibitem{\clearfield{eventtitle}}
+  \DeclareFieldFormat[article,inbook,incollection,inproceedings,patent,thesis,unpublished]{citetitle}{#1}
+  \DeclareFieldFormat[article,inbook,incollection,inproceedings,patent,thesis,unpublished]{title}{#1} 
+}
+\makeatother
+
+
+\title{Título}
+\author{Carlos A. Oliva Moreno}
+\addbibresource{referencias.bib}
+
+\begin{document}
+  \maketitle
+  
+  \tableofcontents{}
+  
+  \appendix
+  
+  \printbibliography[heading=bibintoc,title={Literatura consultada}]
+\end{document}
