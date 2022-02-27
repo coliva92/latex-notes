@@ -89,21 +89,22 @@
 
 
 %% Configuración para escribir pseudocódigo
-% \usepackage[vlined,linesnumbered,ruled]{algorithm2e}
-% \setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+\usepackage[vlined,linesnumbered,ruled]{algorithm2e}
+\setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
 
-% \SetKw{Error}{error}
-% \SetKw{And}{and}
-% \SetKw{Or}{or}
-% \SetKw{Not}{not}
-% \SetKw{True}{true}
-% \SetKw{False}{false}
-% \SetKw{Nil}{nil}
-% \SetKw{Down}{down to}
-% \SetCommentSty{textit}
-% \SetKwComment{Comment}{$\triangleright$ }{}
-% \SetFuncSty{textsc}
-% \DontPrintSemicolon
+\SetKw{Error}{error}
+\SetKw{And}{and}
+\SetKw{Or}{or}
+\SetKw{Not}{not}
+\SetKw{True}{true}
+\SetKw{False}{false}
+\SetKw{Nil}{nil}
+\SetKw{Down}{down to}
+\SetCommentSty{textit}
+\SetKwComment{Comment}{$\triangleright$ }{}
+\SetFuncSty{textsc}
+\DontPrintSemicolon
+\SetAlgorithmName{Pseudocódigo}{}
 
 
 %% Se eliminan algunos campos innecesarios de las ref. bibliográficas
@@ -128,8 +129,15 @@
   \maketitle
   
   \tableofcontents{}
+
+  %% Insertar aquí las importaciones de los capítulos
+  %% P. ej.:
+  %% \input{capitulos/test.tex}
   
   \appendix
+    %% Insertar aquí los anexos (si no los hay, comentar \appendix)
+    %% P. ej.:
+    %% \input{anexos/test.tex}
   
   \printbibliography[heading=bibintoc,title={Literatura consultada}]
 \end{document}
