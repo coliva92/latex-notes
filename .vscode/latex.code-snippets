@@ -15,10 +15,9 @@
 	// 	],
 	// 	"description": "Log output to console"
 	// }
-	"Create algorithm": {
+	"Crear algoritmo": {
     "scope": "latex",
-    "prefix": "algo",
-    "description": "New algorithm environment",
+    "prefix": "__algoritmo",
     "body": [
       "\\begin{algorithm}",
       "  \\caption{\\textsc{$1}}",
@@ -28,10 +27,9 @@
       "\\end{algorithm}"
     ]
   },
-  "Create table": {
+  "Crear tabla": {
     "scope": "latex",
-    "prefix": "tab",
-    "description": "New table environment",
+    "prefix": "__tabla",
     "body": [
       "\\begin{table}",
       "  \\caption{$4}",
@@ -47,10 +45,9 @@
       "\\end{table}"
     ]
   },
-  "Create figure": {
+  "Crear figura": {
     "scope": "latex",
-    "prefix": "fig",
-    "description": "New figure environment",
+    "prefix": "__figura",
     "body": [
       "\\begin{figure}",
       "  \\begin{centering}",
@@ -59,6 +56,111 @@
       "  \\caption{$3}",
       "  \\label{fig:$2}",
       "\\end{figure}"
+    ]
+  },
+  "Crear figura en el márgen": {
+    "scope": "latex",
+    "prefix": "__figuramar",
+    "body": [
+      "\\begin{marginfigure}",
+      "  \\includegraphics[width=1\\textwidth]{figuras/$1}",
+      "  \\caption{$3}",
+      "  \\label{fig:$2}",
+      "\\end{marginfigure}"
+    ]
+  },
+  "Crear figura ancha": {
+    "scope": "latex",
+    "prefix": "__figuraanch",
+    "body": [
+      "\\begin{figure*}",
+      "  \\includegraphics[width=1\\textwidth]{figuras/$1}",
+      "  \\caption{$3}",
+      "  \\label{fig:$2}",
+      "\\end{figure*}"
+    ]
+  },
+  "Crear definición": {
+    "scope": "latex",
+    "prefix": "__definicion",
+    "body": [
+      "\\begin{defn}",
+      "  $1",
+      "\\end{defn}"
+    ]
+  },
+  "Crear ejemplo": {
+    "scope": "latex",
+    "prefix": "__ejemplo",
+    "body": [
+      "\\begin{expl}",
+      "  $1",
+      "\\end{expl}"
+    ]
+  },
+  "Crear teorema": {
+    "scope": "latex",
+    "prefix": "__teorema",
+    "body": [
+      "\\begin{thm}",
+      "  $1",
+      "\\end{thm}"
+    ]
+  },
+  "Crear lema": {
+    "scope": "latex",
+    "prefix": "__lema",
+    "body": [
+      "\\begin{lem}",
+      "  $1",
+      "\\end{lem}"
+    ]
+  },
+  "Crear corolario": {
+    "scope": "latex",
+    "prefix": "__corolario",
+    "body": [
+      "\\begin{cor}",
+      "  $1",
+      "\\end{cor}"
+    ]
+  },
+  "Crear escolio": {
+    "scope": "latex",
+    "prefix": "__escolio",
+    "body": [
+      "\\begin{rem}",
+      "  $1",
+      "\\end{rem}"
+    ]
+  },
+  "Crear demostración": {
+    "scope": "latex",
+    "prefix": "__demostracion",
+    "body": [
+      "\\begin{proof}",
+      "  $1",
+      "\\end{proof}"
+    ]
+  },
+  "Crear casos": {
+    "scope": "latex",
+    "prefix": "__casos",
+    "body": [
+      "\\begin{casenv}",
+      "  \\item $1",
+      "\\end{casenv}"
+    ]
+  },
+  "Crear demostración por IL": {
+    "scope": "latex",
+    "prefix": "__invariante",
+    "body": [
+      "\\begin{description}",
+      "  \\item[Inicialización] $1",
+      "  \\item[Mantenimiento] $2",
+      "  \\item[Finalización] $3",
+      "\\end{description}\\qed"
     ]
   }
 }
