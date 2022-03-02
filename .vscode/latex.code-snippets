@@ -98,6 +98,15 @@
       "\\end{expl}"
     ]
   },
+  "Crear proposición": {
+    "scope": "latex",
+    "prefix": "__proposicion",
+    "body": [
+      "\\begin{prop}",
+      "  $1",
+      "\\end{prop}"
+    ]
+  },
   "Crear teorema": {
     "scope": "latex",
     "prefix": "__teorema",
