@@ -169,7 +169,20 @@
       "  \\item[Inicialización] $1",
       "  \\item[Mantenimiento] $2",
       "  \\item[Finalización] $3",
-      "\\end{description}\\qed"
+      "  \\qed",
+      "\\end{description}"
+    ]
+  },
+  "Crear demostración por inducción": {
+    "scope": "latex",
+    "prefix": "__induccion",
+    "body": [
+      "\\begin{description}",
+      "  \\item[Caso base] $1",
+      "  \\item[Hipótesis inductiva] $2",
+      "  \\item[Paso inductivo] $3",
+      "  \\qed",
+      "\\end{description}"
     ]
   }
 }
